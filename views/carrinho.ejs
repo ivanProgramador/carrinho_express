@@ -1,0 +1,38 @@
+<!-- views/carrinho.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <title>Carrinho de Compras</title>
+</head>
+<body>
+<div class="container">
+  <h1>Carrinho de Compras</h1>
+  <ul class="list-group mb-3">
+    <% carrinho.forEach(item => { %>
+      <li class="list-group-item"><%= item.descricao %>|| <%= item.preco %> || <%= item.pedido %></li>
+    <% }); %>
+  </ul>
+  <form class="form" action="/adicionar" method="post">
+    <label class="form-control col-md-2">Descrição</label>
+    <input class="form-control col-md-4 mb-2" type="text" name="descricao" required>
+    <label class="form-control col-md-2 " >Preço</label>
+    <input class="form-control col-md-4 mb-2" type="text" name="preco" required>
+    <label class="form-control col-md-2" >Pedido</label>
+    <input class="form-control col-md-4 mb-2" type="text" name="pedido" required>
+
+    <button class="btn btn-success mt-2" type="submit">Adicionar ao Carrinho</button>
+  </form>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js"></script>
+  
+
+</body>
+</html>
